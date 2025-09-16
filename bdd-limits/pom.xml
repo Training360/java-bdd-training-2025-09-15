@@ -91,6 +91,7 @@
                              examples and scenarios. -->
                         <configurationParameters>
                             cucumber.junit-platform.naming-strategy=surefire
+                            cucumber.plugin = pretty, html:target/cucumber-report.html
                         </configurationParameters>
                     </properties>
                 </configuration>

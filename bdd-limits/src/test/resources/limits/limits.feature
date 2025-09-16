@@ -37,3 +37,21 @@ Feature: Handling token limits
       Given I have 200 tokens available
       When I try to use 201 tokens
       Then I should have 0 tokens available
+
+    Scenario Outline: Decrease tokens
+      Given I have <tokens> tokens available
+      When I try to use <cost> tokens
+      Then I should have <available> tokens available
+      Examples:
+        |tokens|cost|available|
+        |1000  |200|800      |
+        |200  |200|0      |
+
+
+
+    Scenario:
+      Given the user has tokens
+        |name|tokens|
+        |John|   200|
+        |Jack|   230|
+        |Jane|   240|
